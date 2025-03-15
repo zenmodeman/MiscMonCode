@@ -13,6 +13,7 @@ def get_pi_digits(n=NUM_MONS):
   return pi_digits
 
 
+
 pi_digits = get_pi_digits()
 
 # print(pi_digits[900:910])
@@ -31,13 +32,32 @@ def get_next_strings(start_string=1, num_strings=10):
     starting_digit = (i - 1) * 3
     print(i, pi_digits[starting_digit:starting_digit + 3])
 
+#337 -> Lunatone [Hoopa - 720]
+#338 -> Solrock [Hitmonlee - 106]
 
 # print(get_nth_pi_string(323))
 
-def perform_digit_quiz(min_digit = 1, max_digit = 1008, step = 10, runs = 3):
+
+def perform_single_quiz(min_string = 1, max_string = 338, terminating_score = 10):
+   num_correct = 0 
+   num_attempts = 0
+   while num_correct < terminating_score:
+      rand_string_num = random.randrange(min_string, max_string + 1)
+      answer = str(get_nth_pi_string(rand_string_num))
+      user_input = input(f"Enter the value of string #{rand_string_num}: ")
+      if answer == user_input:
+         num_correct += 1
+         print(f"Correct answer! Your score is now {num_correct}")
+      else:
+         print(f"Incorrect, the correct answer is {answer}")
+      num_attempts +=1
+   print(f"You have finished the quiz with {num_correct} answers correct in {num_attempts} attempts!")
+
+
+def perform_sequence_quiz(min_digit = 1, max_digit = 1000, step = 10, runs = 3):
     pi_digits = get_pi_digits()
-    min_init_digit = min_digit + 10
-    max_init_digit = max_digit - 10
+    min_init_digit = min_digit + step
+    max_init_digit = max_digit - step
 
     for i in range(runs):
        print(f"Starting run #{i+1} out of {runs} runs.")
@@ -58,8 +78,8 @@ def perform_digit_quiz(min_digit = 1, max_digit = 1008, step = 10, runs = 3):
           print(f"Incorrect. The correct answer is: {backward_nums}.")
 
 if __name__ == "__main__":
-   print(perform_digit_quiz())
-    
+   # print(perform_sequence_quiz())
+   perform_single_quiz() 
 
 
 
