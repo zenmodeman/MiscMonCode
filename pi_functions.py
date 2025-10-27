@@ -37,8 +37,10 @@ def get_next_strings(start_string=1, num_strings=10):
 
 # print(get_nth_pi_string(323))
 
+#The current number up to which I have learned.
+WORKING_STRING = 382 
 
-def perform_single_quiz(min_string = 1, max_string = 338, terminating_score = 10):
+def perform_single_quiz(min_string = 1, max_string = WORKING_STRING, terminating_score = 10):
    num_correct = 0 
    num_attempts = 0
    while num_correct < terminating_score:
@@ -76,6 +78,8 @@ def perform_sequence_quiz(min_digit = 1, max_digit = 1000, step = 10, runs = 3):
           print("Correct answer!")
        else:
           print(f"Incorrect. The correct answer is: {backward_nums}.")
+
+
 
 if __name__ == "__main__":
    # print(perform_sequence_quiz())
