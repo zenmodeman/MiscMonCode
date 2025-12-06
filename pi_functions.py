@@ -38,7 +38,7 @@ def get_next_strings(start_string=1, num_strings=10):
 # print(get_nth_pi_string(323))
 
 #The current number up to which I have learned.
-WORKING_STRING = 384
+WORKING_STRING = 390
 
 def perform_single_quiz(min_string = 1, max_string = WORKING_STRING, terminating_score = 10):
    num_correct = 0 
@@ -84,7 +84,7 @@ def perform_sequence_quiz(min_digit = 1, max_digit = 1000, step = 10, runs = 3):
 if __name__ == "__main__":
    # print(perform_sequence_quiz())
    #Using this block of code as a sanity check of the previous digits as the most recent one
-   get_next_strings(WORKING_STRING - 1, 3)
+   get_next_strings(340, 10)
    # perform_single_quiz() 
 
 
